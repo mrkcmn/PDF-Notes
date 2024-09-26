@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+    color: mintcream;
+}
+
+.slide {
+    margin-bottom: 21px;
+    display: flex;
+}
+    
+textarea {
+    margin-left: 13px;
+    margin-right: 13px;
+    width: 100%;
+}
+
+.saver {
+    margin-top: 21px;
+    margin-bottom: 21px;
+}
+
