@@ -4,6 +4,7 @@
 <head>
     <title>PDF Notes</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://kit.fontawesome.com/d510c4d619.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -12,9 +13,10 @@
         <form method="post" enctype="multipart/form-data">
             <input type="file" name="file">
             <button type="submit" name="submit">Upload</button>
+            <button class="toggleAllButton" type="button" style="display: none; background-color: var(--ignored);">Toggle all</button>
         </form>
     </div>
-    
+
     <div class="saver">
         <input type="text" id="filaName">
         <input type="number" min="1" id="startSlide">

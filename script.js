@@ -23,13 +23,83 @@ const b64toBlob = (b64Data, contentType='image/png', sliceSize=512) => {
 const startSlide = document.getElementById('startSlide');
 const endSlide = document.getElementById('endSlide');
 
+function newToolButton(name, icon, action, container, active) {
+    const button = document.createElement('button');
+    button.className = 'toolButton ' + name;
+    button.addEventListener('click', action);
+    if (active) {
+        button.style.opacity = '70%';
+    }
+    container.appendChild(button);
+
+    const buttonIcon = document.createElement('i');
+    buttonIcon.className = icon;
+    button.appendChild(buttonIcon);
+}
+
+function ignore() {
+    this.parentNode.previousSibling.className = 'ignored';
+    this.parentNode.nextSibling.className = 'ignored';
+    this.style.opacity = '70%';
+    this.nextSibling.style.opacity = '100%';
+}
+
+function unignore() {
+    this.parentNode.previousSibling.className = 'shown';
+    this.parentNode.nextSibling.className = 'shown';
+    this.style.opacity = '70%';
+    this.previousSibling.style.opacity = '100%';
+}
+
+function toggleOFF() {
+    document.querySelectorAll('.ignoreButton').forEach(function(button) {
+        button.click();
+    });
+
+    this.style.backgroundColor = 'var(--primary)';
+    this.addEventListener('click', toggleON, { once: true });
+}
+
+function toggleON() {
+    document.querySelectorAll('.showButton').forEach(function(button) {
+        button.click();
+    });
+    
+    this.style.backgroundColor = 'var(--ignored)';
+    this.addEventListener('click', toggleOFF, { once: true });
+}
+
+/*
+function ignore() {
+    this.style.backgroundColor = 'var(--primary)';
+    this.childNodes[0].className = 'fa-solid fa-pen-to-square';
+    
+    this.previousSibling.className = 'ignored';
+    this.nextSibling.className = 'ignored';
+    
+    this.addEventListener('click', unignore, { once: true });
+}
+
+function unignore() {
+    this.style.backgroundColor = 'var(--ignored)';
+    this.childNodes[0].className = 'fa-solid fa-trash-can';
+    
+    this.previousSibling.className = 'shown';
+    this.nextSibling.className = 'shown';
+    
+    this.addEventListener('click', ignore, { once: true });
+}
+
 function base64ToPng(canvas, filename) {
     canvas.toBlob(function(blob) {
         saveAs(blob, filename + '.png');
     });
 }
+*/
 
 document.querySelector('form').addEventListener('submit', function(event) {
+    document.querySelector('.toggleAllButton').style.display = 'inline-block';
+
     event.preventDefault();
     const fileInput = document.querySelector('input[type="file"]');
     const file = fileInput.files[0];
@@ -58,8 +128,14 @@ document.querySelector('form').addEventListener('submit', function(event) {
                             return page.render(renderContext).promise.then(function() {
                                 const slideDiv = document.createElement('div');
                                 slideDiv.className = 'slide';
-                                slideDiv.id = pageNum;
                                 slideDiv.appendChild(canvas);
+
+                                const buttonContainer = document.createElement('div');
+                                buttonContainer.className = 'buttonContainer';
+                                slideDiv.appendChild(buttonContainer);
+
+                                newToolButton('ignoreButton', 'fa-solid fa-trash-can', ignore, buttonContainer, false);
+                                newToolButton('showButton', 'fa-solid fa-pen-to-square', unignore, buttonContainer, true);
 
                                 const textBox = document.createElement('textarea');
                                 textBox.style.height = canvas.height - 5.6 + 'px';
@@ -89,6 +165,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     }
 });
 
+document.querySelector('.toggleAllButton').addEventListener('click', toggleOFF, { once: true });
 
 document.getElementById('saveButton').addEventListener('click', async function() {
     let markdown = '';
@@ -99,6 +176,10 @@ document.getElementById('saveButton').addEventListener('click', async function()
     let files = [];
 
     for (let i = startSlide.value; i <= endSlide.value; i++) {
+        if (canvases[i-1].className === 'ignored') {
+            continue;
+        }
+
         markdown += `![[${fileName + '_' + i}.png]]\n${notes[i-1].value}\n\n`;
         
         const b64Data = canvases[i-1].toDataURL('image/png').split(',')[1];
