@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>PDF Notes</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>PDF Notes</h1>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <button type="submit" name="submit">Upload</button>
+        </form>
+    </div>
+    
+    <div class="saver">
+        <input type="text" id="filaName">
+        <input type="number" min="1" id="startSlide">
+        <input type="number" min="1" id="endSlide">
+        <button type="button" id="saveButton">Save</button>
+    </div>
+
+    <div class="slides" id="slidesContainer">            
+        <!-- Slides will be dynamically inserted here -->
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="script.js" type="module"></script>
+</body>
+</html>
