@@ -85,17 +85,17 @@ Distributed under the MIT License. See `LICENSE.md` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-[contributors-shield]: https://img.shields.io/github/contributors/mrkcmn/PDF-Notes.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/mrkcmn/PDF-Notes?style=for-the-badge
 [contributors-url]: https://github.com/mrkcmn/PDF-Notes/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/mrkcmn/PDF-Notes.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/mrkcmn/PDF-Notes?style=for-the-badge
 [forks-url]: https://github.com/mrkcmn/PDF-Notes/network/members
-[stars-shield]: https://img.shields.io/github/stars/mrkcmn/PDF-Notes.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/mrkcmn/PDF-Notes?style=for-the-badge
 [stars-url]: https://github.com/mrkcmn/PDF-Notes/stargazers
-[issues-shield]: https://img.shields.io/github/issues/mrkcmn/PDF-Notes.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/mrkcmn/PDF-Notes?style=for-the-badge
 [issues-url]: https://github.com/mrkcmn/PDF-Notes/issues
-[license-shield]: https://img.shields.io/github/license/mrkcmn/PDF-Notes.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/mrkcmn/PDF-Notes?style=for-the-badge
 [license-url]: https://github.com/mrkcmn/PDF-Notes/blob/master/LICENSE.md
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/tobia-marco-cimino-b6b69832a/
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
