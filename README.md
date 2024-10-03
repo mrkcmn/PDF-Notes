@@ -75,7 +75,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE.md` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -94,7 +94,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [issues-shield]: https://img.shields.io/github/issues/mrkcmn/PDF-Notes.svg?style=for-the-badge
 [issues-url]: https://github.com/mrkcmn/PDF-Notes/issues
 [license-shield]: https://img.shields.io/github/license/mrkcmn/PDF-Notes.svg?style=for-the-badge
-[license-url]: https://github.com/mrkcmn/PDF-Notes/blob/master/LICENSE.txt
+[license-url]: https://github.com/mrkcmn/PDF-Notes/blob/master/LICENSE.md
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/tobia-marco-cimino-b6b69832a/
 [product-screenshot]: images/screenshot.png
