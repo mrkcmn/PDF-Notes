@@ -3,9 +3,20 @@
     --ignored: rgb(255, 100, 100);
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+    display: none;
+}
+html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 body {
     background-color: black;
     color: var(--primary);
+    margin-left: 13px;
+    margin-right: 13px;
 }
 
 .slide {
@@ -42,7 +53,6 @@ canvas.ignored {
 
 textarea {
     margin-left: 13px;
-    margin-right: 13px;
     width: 100%;
 }
 textarea.ignored {
