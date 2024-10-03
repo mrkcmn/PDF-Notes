@@ -98,12 +98,11 @@ function base64ToPng(canvas, filename) {
 */
 
 document.querySelector('form').addEventListener('submit', function(event) {
-    document.querySelector('.toggleAllButton').style.display = 'inline-block';
-
     event.preventDefault();
     const fileInput = document.querySelector('input[type="file"]');
     const file = fileInput.files[0];
     if (file && file.type === 'application/pdf') {
+        document.querySelector('.toggleAllButton').style.display = 'inline-block';
         const reader = new FileReader();
         reader.onload = function(e) {
             const typedarray = new Uint8Array(e.target.result);
