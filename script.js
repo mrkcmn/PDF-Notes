@@ -180,8 +180,12 @@ document.getElementById('saveButton').addEventListener('click', async function()
             continue;
         }
 
-        markdown += `![[${fileName + '_' + i}.png]]\n${notes[i-1].value}\n\n`;
-        
+        markdown += `![[${fileName + '_' + i}.png]]\n`;
+        if (notes[i-1].value) {
+            markdown += `${notes[i-1].value}\n`;
+        }
+        markdown += '\n';
+
         const b64Data = canvases[i-1].toDataURL('image/png').split(',')[1];
         files.push({
             name: fileName + '_' + i + '.png',
