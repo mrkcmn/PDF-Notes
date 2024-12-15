@@ -39,7 +39,7 @@
 ## About The Project
 
 PDF Notes is a light weight web app designed for easy, on-the-fly note taking on .pdf file.
-The app currently only supports markdown format as a way to save the notes. More info ara available in the [##Usage](#Usage) section.
+The app currently only supports markdown format as a way to save the notes. More info ara available in the [Usage](#Usage) section.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
